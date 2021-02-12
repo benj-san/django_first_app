@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MDMA - My Daily Mad Action</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'protagonists/style.css' %}">
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <main>
+
+        {% if first_heroes %}
+        <ul>
+        {% for hero in first_heroes %}
+            <li>
+                <a href="{% url 'show' hero.id %}">{{ hero.protagonist_name }}</a>
+                <p>{{hero.category}} : {{hero.protagonist_description}}</p>
+            </li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <p>No characters here.</p>
+        {% endif %}
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
